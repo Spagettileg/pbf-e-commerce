@@ -14,6 +14,10 @@ def add_to_cart(request, id):
     quantity=int(request.POST.get('quantity'))
     
     cart = request.session.get('cart', {})
+    
+    # If statement ensures a product price is not updated via User adding
+    # a duplicate product.
+    
     if id in cart:
         cart[id] = int(cart[id]) + quantity      
     else:
