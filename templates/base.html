@@ -12,25 +12,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     
     <!-- Personal CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
     
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+    <nav class="navbar bg-light navbar-light fixed-top">
         <a class="navbar-brand" href="/">E-commerce</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-              </button>
-        <ul class="navbar-nav">
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-                <li><a href="{% url 'profile' %}">Profile</a></li>
-            {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li><a href="{% url 'registration' %}">Register</a></li>
-            {% endif %}
-            <li>
+        <ul>
+            <li class="navbar-right">
                 <a href="{% url 'view_cart' %}"></a>
                 <i class="trolley fas fa-shopping-cart">Cart</i> 
                 <!-- If product count greater then 0 = warning message to user -->
@@ -38,6 +28,15 @@
                 <label class="badge badge-warning">{{ product_count }}</label>
                 {% endif %}
             </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'registration' %}">Register</a></li>
+            {% endif %}
         </ul>
     </nav>
     
