@@ -3,16 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block page_title %}{% endblock %}</title>
+    <title>E-Commerce</title>
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     
-     <!-- Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-theme.min.css">
     
     <!-- Personal CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
@@ -20,7 +17,11 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top">
+        <a class="navbar-brand" href="/">E-commerce</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+              </button>
         <ul class="navbar-nav">
             {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -29,6 +30,14 @@
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'registration' %}">Register</a></li>
             {% endif %}
+            <li>
+                <a href="{% url 'view_cart' %}"></a>
+                <i class="trolley fas fa-shopping-cart">Cart</i> 
+                <!-- If product count greater then 0 = warning message to user -->
+                {% if product_count > 0 %}
+                <label class="badge badge-warning">{{ product_count }}</label>
+                {% endif %}
+            </li>
         </ul>
     </nav>
     
@@ -39,6 +48,12 @@
         {% for message in messages %} {{ message }} {% endfor %}
     </div>
     {% endif %}
+    <div class="display">
+        <form action="{% url 'search' %}" method="GET">
+            <input type="text" name="q">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     {% block content %}{% endblock %}
     
     <!-- Add Javascript Library Files -->
