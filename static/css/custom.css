@@ -38,7 +38,7 @@ h1, h1 a {
 /* Navbar */
 
 .trolley {
-    color: #fff;
+    color: #000;
 }
 
 .navbar-nav {
@@ -53,7 +53,7 @@ h1, h1 a {
 
 .navbar-brand{
     padding: 10px 10px;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 #logo {
