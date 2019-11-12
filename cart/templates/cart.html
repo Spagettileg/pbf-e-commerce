@@ -1,4 +1,4 @@
-{% extends 'base.html %}
+{% extends 'base.html' %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
@@ -6,8 +6,7 @@
 
 <div class="row row-flex">
     {% for item in cart_items %}
-    <!-- The for loop is looping over item in cart_items because
-    we're only going to show what's currently in our cart. -->
+    <!-- The for loop is looping over item in cart_items because we're only going to show what's currently in our cart. -->
     <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
         
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>  
@@ -28,7 +27,7 @@
                             <div class="input-group-addon">{{ item.quantity }}</div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="fas fa-edit" aria-hidden="true"></span>Amend</button>
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>  Amend</button>
                 </form>
             </p>
         </div>
@@ -37,7 +36,7 @@
 </div>
 <div class="row">
     <p>Total</p>
-    <p><span class="fas fa-pound-sign" aria-hidden="true"></span>{{ total }}</p>
-    <a href="/" class="btn brn-success" role="button"><span class="far fa-thumbs-up" aria-hidden=true"></span>Checkout</a>
+    <p><span class="glyphicon glyphicon-gbp" aria-hidden="true"></span>{{ total }}</p>
+    <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden=true"></span>  Checkout</a>
 </div>
 {% endblock %}
