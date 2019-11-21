@@ -27,13 +27,13 @@ pylint==1.8.1
 pylint-django==0.8.0
 pylint-flask==0.5
 pylint-plugin-utils==0.6
-python-dateutil==1.5
+python-dateutil==2.8.1
 pytz==2019.2
 PyYAML==5.1.2
 requests==2.22.0
 rsa==3.4.2
 s3transfer==0.2.1
-six==1.12.0
+six==1.13.0
 stevedore==1.31.0
 stripe==2.40.0
 urllib3==1.25.7
