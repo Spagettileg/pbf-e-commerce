@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 # Link allowed hosts to .bashrc file for sensitive data
-ALLOWED_HOSTS = [os.getenv('AWSC9_HOST')]
+ALLOWED_HOSTS = [os.getenv('AWSC9_HOST', 'pbf-e-commerce.herokuapp.com')]
 
 
 # Application definition
