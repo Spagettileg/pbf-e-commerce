@@ -1,1 +1,1 @@
-web: gunicorn pbf-e-commerce.wsgi:application
+web: gunicorn e-commerce.wsgi:application
