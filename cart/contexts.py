@@ -17,7 +17,7 @@ def cart_contents(request):
     For loop created for 2 reasons. An ID and a Quantity from cart_items.
     The For loop ensures the user uses the same template for each product
     added to the cart.
-    Key value pairs retunred for cart_items, total & product_count. 
+    Key value pairs returned for cart_items, total & product_count. 
     """
     
     for id, quantity in cart.items():
