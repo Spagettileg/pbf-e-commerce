@@ -17,9 +17,9 @@ class Order(models.Model):
         # A summary of the order = id, date & full name
         
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False)
-    product = models.ForeignKey(Product, null=False)
-    quantity = models.IntegerField(blank=False)
+    order = models.ForeignKey(Order, null=False, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
+    quantity = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return "{0} {1} @ {2}".format(
