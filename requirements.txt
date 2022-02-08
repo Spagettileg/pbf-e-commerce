@@ -45,7 +45,7 @@ requests==2.25.1
 rsa>=4.7
 s3transfer==0.3.4
 six==1.15.0
-sqlparse==0.4.1
+sqlparse>=0.4.2
 stevedore==3.3.0
 stripe==2.56.0
 traitlets==4.3.3
