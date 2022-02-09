@@ -53,5 +53,5 @@ virtualenv==16.2.0
 virtualenv-clone==0.5.7
 virtualenvwrapper==4.8.4
 wcwidth==0.2.5
-wrapt==1.13.3
+wrapt==1.11
 zipp>=3.5.0
