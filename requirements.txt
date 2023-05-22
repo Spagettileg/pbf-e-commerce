@@ -17,7 +17,7 @@ pytz==2019.3
 requests==2.27.1
 s3transfer==0.2.1
 six==1.13.0
-sqlparse==0.3.0
+sqlparse==0.4.4
 stripe==2.29.4
 sweetify==2.0.0
 urllib3
